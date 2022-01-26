@@ -21,5 +21,14 @@ namespace Lab1
             YearFormed = yearFormed;
             Members = members;
         }
+
+        /// <summary>
+        /// Overrides the ToString method of the parent Object Class.
+        /// </summary>
+        /// <returns>Returns the Band's Name and type as a string.</returns>
+        public override string ToString()
+        {
+            return base.ToString() + " - Pop Band";
+        }
     }
 }

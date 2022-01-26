@@ -48,12 +48,12 @@ namespace Lab1
 
         /// <summary>
         /// Overrides the ToString method of the parent Object Class. 
-        /// And displays the type of a given instance. 
+        /// And displays the band name a given instance. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Returns the band ame as a string</returns>
         public override string ToString()
         {
-            return this.GetType().ToString();
+            return BandName;
         }
     }
 }
