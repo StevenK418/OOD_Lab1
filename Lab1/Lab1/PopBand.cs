@@ -15,7 +15,7 @@ namespace Lab1
         /// <param name="name"></param>
         /// <param name="yearFormed"></param>
         /// <param name="members"></param>
-        public PopBand(string name, DateTime yearFormed, string[] members)
+        public PopBand(string name, DateTime yearFormed, string[] members):base(name, yearFormed, members)
         {
             BandName = name;
             YearFormed = yearFormed;

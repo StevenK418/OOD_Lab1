@@ -12,6 +12,21 @@ namespace Lab1
         public DateTime YearFormed { get; set; }
         public string[] Members { get; set; }
 
+
+        /// <summary>
+        /// Parametrised constructor allowing initialization of properties on
+        /// each instantiation of the class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="yearFormed"></param>
+        /// <param name="members"></param>
+        public Band(string name, DateTime yearFormed, string[] members)
+        {
+            BandName = name;
+            YearFormed = yearFormed;
+            Members = members;
+        }
+
         /// <summary>
         /// Implements the CompareTo Method as
         /// </summary>
@@ -20,7 +35,7 @@ namespace Lab1
         public int CompareTo(object o)
         {
             int result = 0;
-
+            //TODO: Run comparison here
             return result;
         }
 
