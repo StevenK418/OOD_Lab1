@@ -87,6 +87,9 @@ namespace Lab1
             bands.Add(b4);
             bands.Add(b5);
             bands.Add(b6);
+
+            //Sort the bands
+            bands.Sort();
         }
 
         /// <summary>

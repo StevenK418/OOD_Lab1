@@ -43,9 +43,8 @@ namespace Lab1
         /// <returns>Returns the rsult of the comparison as an int.</returns>
         public int CompareTo(object o)
         {
-            int result = 0;
-            //TODO: Run comparison here
-            return result;
+            Band otherBand = (Band) o;
+            return this.BandName.CompareTo(otherBand.BandName);
         }
 
         /// <summary>
