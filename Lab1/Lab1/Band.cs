@@ -9,8 +9,8 @@ namespace Lab1
     abstract class Band:IComparable
     {
         public string BandName { get; set; }
-        public DateTime YearFormed { get; set; }
-        public string[] Members { get; set; }
+        public int YearFormed { get; set; }
+        public string Members { get; set; }
 
         /// <summary>
         /// Parametrised constructor allowing initialization of properties on
@@ -19,7 +19,7 @@ namespace Lab1
         /// <param name="name"></param>
         /// <param name="yearFormed"></param>
         /// <param name="members"></param>
-        public Band(string name, DateTime yearFormed, string[] members)
+        public Band(string name, int yearFormed, string members)
         {
             BandName = name;
             YearFormed = yearFormed;

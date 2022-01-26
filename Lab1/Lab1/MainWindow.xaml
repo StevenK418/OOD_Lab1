@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="759">
+        Title="MainWindow" Height="450" Width="759" Loaded="Window_Loaded">
     <Grid>
         <Label Content="Bands" HorizontalAlignment="Left" Margin="68,13,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.49,0.423" FontSize="24"/>
         <ComboBox x:Name="CMBX_Genre" HorizontalAlignment="Left" Margin="125,56,0,0" VerticalAlignment="Top" Width="209"/>
