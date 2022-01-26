@@ -9,7 +9,7 @@ namespace Lab1
     class Album
     {
         string Name { get; set; }
-        DateTime Released { get; set; }
+        int Released { get; set; }
         long Sales { get; set; }
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace Lab1
         /// <param name="name"></param>
         /// <param name="released"></param>
         /// <param name="sales"></param>
-        public Album(string name, DateTime released, long sales)
+        public Album(string name, int released, long sales)
         {
             Name = name;
             Released = released;
@@ -37,10 +37,10 @@ namespace Lab1
         /// <summary>
         /// Overrides the ToString method of the parent Object Class.
         /// </summary>
-        /// <returns>Returns the album name as a string.</returns>
+        /// <returns>Returns the album properties as a string.</returns>
         public override string ToString()
         {
-            return Name;
+            return string.Format($"{Name} {Released} {Sales}");
         }
     }
 }
