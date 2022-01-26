@@ -12,7 +12,6 @@ namespace Lab1
         public DateTime YearFormed { get; set; }
         public string[] Members { get; set; }
 
-
         /// <summary>
         /// Parametrised constructor allowing initialization of properties on
         /// each instantiation of the class.
