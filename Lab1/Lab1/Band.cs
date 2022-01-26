@@ -11,6 +11,7 @@ namespace Lab1
         public string BandName { get; set; }
         public int YearFormed { get; set; }
         public string Members { get; set; }
+        public List<Album> AlbumList { get; set; }
 
         /// <summary>
         /// Parametrised constructor allowing initialization of properties on
@@ -24,12 +25,13 @@ namespace Lab1
             BandName = name;
             YearFormed = yearFormed;
             Members = members;
+            AlbumList = new List<Album>();
         }
 
         /// <summary>
         /// Default constructor, takes no parameters. 
         /// </summary>
-        public Band()
+        public Band():this("Unkown", 1960, "Unkown")
         {
 
         }

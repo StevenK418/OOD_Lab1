@@ -50,6 +50,19 @@ namespace Lab1
             //Populate text fields with property values of the selected band
             TBLK_Formed.Text = band.YearFormed.ToString();
             TBLK_Members.Text = band.Members;
+
+            //Show the band's albums in the albums list box
+            ShowAlbums(band);
+        }
+
+        /// <summary>
+        /// Assigns a given band's albums list as the 
+        /// datasource for the albums listbox.
+        /// </summary>
+        /// <param name="band"></param>
+        private void ShowAlbums(Band band)
+        {
+            LSTBX_Albums.ItemsSource = band.AlbumList;
         }
 
         /// <summary>
@@ -76,6 +89,10 @@ namespace Lab1
             bands.Add(b6);
         }
 
+        /// <summary>
+        /// Initailizes a series of new Album objects
+        /// and assigns them to the appropriate band object
+        /// </summary>
         private void InitializeAlbums()
         {
             //Create a new random object
@@ -105,22 +122,27 @@ namespace Lab1
             Album a11 = new Album("Room on fire", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
             Album a12 = new Album("The modern age", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
 
-            //Add the newly created album instances to the albums list
-            albums.Add(a1);
-            albums.Add(a2);
-            albums.Add(a3);
-            albums.Add(a4);
-            albums.Add(a5);
-            albums.Add(a6);
-            albums.Add(a7);
-            albums.Add(a8);
-            albums.Add(a9);
-            albums.Add(a10);
-            albums.Add(a11);
-            albums.Add(a12);
+            //Add each album instance to it's corresponding bands
+            if(bands.Count > 0)
+            {
+                bands[0].AlbumList.Add(a1);
+                bands[0].AlbumList.Add(a2);
 
-            //Assign the bands list as the source for the albums listbox.
-            LSTBX_Albums.ItemsSource = albums;
+                bands[1].AlbumList.Add(a3);
+                bands[1].AlbumList.Add(a4);
+
+                bands[2].AlbumList.Add(a5);
+                bands[2].AlbumList.Add(a6);
+
+                bands[3].AlbumList.Add(a7);
+                bands[3].AlbumList.Add(a8);
+
+                bands[4].AlbumList.Add(a9);
+                bands[4].AlbumList.Add(a10);
+
+                bands[5].AlbumList.Add(a11);
+                bands[5].AlbumList.Add(a12);
+            }
         }
     }
 }
