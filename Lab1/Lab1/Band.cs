@@ -28,6 +28,14 @@ namespace Lab1
         }
 
         /// <summary>
+        /// Default constructor, takes no parameters. 
+        /// </summary>
+        public Band()
+        {
+
+        }
+
+        /// <summary>
         /// Implements the CompareTo Method as
         /// </summary>
         /// <param name="o"></param>
