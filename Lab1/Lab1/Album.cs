@@ -34,7 +34,6 @@ namespace Lab1
 
         }
 
-
         /// <summary>
         /// Overrides the ToString method of the parent Object Class.
         /// </summary>
