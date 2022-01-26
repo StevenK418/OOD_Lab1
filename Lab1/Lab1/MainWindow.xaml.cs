@@ -21,7 +21,7 @@ namespace Lab1
     public partial class MainWindow : Window
     {
         List<Band> bands = new List<Band>();
-        List<Album> albums = new List<Album>();
+
         public MainWindow()
         {
             InitializeComponent();
