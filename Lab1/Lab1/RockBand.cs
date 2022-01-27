@@ -14,7 +14,7 @@ namespace Lab1
         /// <returns>Returns the Band's Name and type as a string.</returns>
         public override string ToString()
         {
-            return base.ToString() + " - Rock Band";
+            return base.ToString() + $" - {BandType} Band";
         }
     }
 }

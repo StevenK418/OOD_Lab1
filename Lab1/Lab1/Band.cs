@@ -13,6 +13,8 @@ namespace Lab1
         public string Members { get; set; }
         public List<Album> AlbumList { get; set; }
 
+        public string BandType { get; set; }
+
         /// <summary>
         /// Parametrised constructor allowing initialization of properties on
         /// each instantiation of the class.
@@ -20,18 +22,19 @@ namespace Lab1
         /// <param name="name"></param>
         /// <param name="yearFormed"></param>
         /// <param name="members"></param>
-        public Band(string name, int yearFormed, string members)
+        public Band(string name, int yearFormed, string members, string bandType)
         {
             BandName = name;
             YearFormed = yearFormed;
             Members = members;
             AlbumList = new List<Album>();
+            BandType = bandType;
         }
 
         /// <summary>
         /// Default constructor, takes no parameters. 
         /// </summary>
-        public Band():this("Unkown", 1960, "Unkown")
+        public Band():this("Unkown", 1960, "Unkown", "unkown")
         {
 
         }
