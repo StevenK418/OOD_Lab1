@@ -9,7 +9,8 @@ namespace Lab1
     class Album
     {
         string Name { get; set; }
-        int Released { get; set; }
+        DateTime Released { get; set; }
+        public int YearsSinceRelease { get; set; }
         long Sales { get; set; }
 
         /// <summary>
@@ -19,11 +20,14 @@ namespace Lab1
         /// <param name="name"></param>
         /// <param name="released"></param>
         /// <param name="sales"></param>
-        public Album(string name, int released, long sales)
+        public Album(string name, DateTime released, long sales)
         {
             Name = name;
             Released = released;
             Sales = sales;
+
+            //Get number of years since the year the album was released
+            YearsSinceRelease = DateTime.Today.Year - released.Year;
         }
 
         /// <summary>
@@ -40,7 +44,7 @@ namespace Lab1
         /// <returns>Returns the album properties as a string.</returns>
         public override string ToString()
         {
-            return string.Format($"{Name} {Released} {Sales}");
+            return string.Format($"{Name} {Released.Year} {YearsSinceRelease} {Sales}");
         }
     }
 }

@@ -102,7 +102,7 @@ namespace Lab1
             PopBand b3 = new PopBand() { BandName = "The Beatles", YearFormed = 1960, Members = "John Lennon, Paul McCartney, George Harrison, Ringo Starr", BandType = "Pop" };
             PopBand b4 = new PopBand() { BandName = "Green Day", YearFormed = 1986, Members = "Billie Joe Armstrong, Mike Dirnt, Tre Cool", BandType = "Pop" };
 
-            IndieBand b5 = new IndieBand() { BandName = "Arctice Monkeys", YearFormed = 2002, Members = "Alex Turner, Matt Heldens, Jamie Cook, Nick O'Malley", BandType="Indie" };
+            IndieBand b5 = new IndieBand() { BandName = "Arctic Monkeys", YearFormed = 2002, Members = "Alex Turner, Matt Heldens, Jamie Cook, Nick O'Malley", BandType="Indie" };
             IndieBand b6 = new IndieBand() { BandName = "The Strokes", YearFormed = 1998, Members = "Julian Casablancas, Nick Valensi, Albert Hammond Jr, Nikolai Fraiture, Fabrizia Moretti", BandType="Indie"};
 
             //Add the newly instantiated objects to the bands list
@@ -127,49 +127,65 @@ namespace Lab1
             Random rnd = new Random();
 
             //Foo Fighter's albums
-            Album a1 = new Album("Greatest Hits", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
-            Album a2 = new Album("One By One", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
+            Album a1 = new Album("Greatest Hits", new DateTime(rnd.Next(1960, 2020), 01,01), rnd.Next(1000000, 10000000));
+            Album a2 = new Album("One By One", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
 
-            //Rolling Stone's Albums
-            Album a3 = new Album("Beggars Banquet", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
-            Album a4 = new Album("Blue & Lonesome", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
+           //Rolling Stone's Albums
+            Album a3 = new Album("Beggars Banquet", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
+            Album a4 = new Album("Blue & Lonesome", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
 
             //Beatles Albums
-            Album a5 = new Album("Let it be", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
-            Album a6 = new Album("Sgt. Pepper's Lonely Heart club band", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
+            Album a5 = new Album("Let it be", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
+            Album a6 = new Album("Sgt. Pepper's Lonely Heart club band", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
 
             //Green Day Albums
-            Album a7 = new Album("Dookie", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
-            Album a8 = new Album("American Idiot", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
+            Album a7 = new Album("Dookie", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
+            Album a8 = new Album("American Idiot", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
 
             //Arctice Monkeys Albums
-            Album a9 = new Album("Whatever people say I am, that's what I'm not", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
-            Album a10 = new Album("Favourite worst nightmare", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
+            Album a9 = new Album("Whatever people say I am, that's what I'm not", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
+            Album a10 = new Album("Favourite worst nightmare", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
 
             //Strokes Albums
-            Album a11 = new Album("Room on fire", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
-            Album a12 = new Album("The modern age", rnd.Next(1960, 2020), rnd.Next(1000000, 10000000));
+            Album a11 = new Album("Room on fire", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
+            Album a12 = new Album("The modern age", new DateTime(rnd.Next(1960, 2020), 01, 01), rnd.Next(1000000, 10000000));
 
-            //Add each album instance to it's corresponding bands
+            //Add each album instance to it's corresponding band
             if(bands.Count > 0)
             {
-                bands[0].AlbumList.Add(a1);
-                bands[0].AlbumList.Add(a2);
-
-                bands[1].AlbumList.Add(a3);
-                bands[1].AlbumList.Add(a4);
-
-                bands[2].AlbumList.Add(a5);
-                bands[2].AlbumList.Add(a6);
-
-                bands[3].AlbumList.Add(a7);
-                bands[3].AlbumList.Add(a8);
-
-                bands[4].AlbumList.Add(a9);
-                bands[4].AlbumList.Add(a10);
-
-                bands[5].AlbumList.Add(a11);
-                bands[5].AlbumList.Add(a12);
+                foreach (Band band in bands)
+                {
+                    if (band.BandName== "The Foo Fighters")
+                    {
+                        band.AlbumList.Add(a1);
+                        band.AlbumList.Add(a2);
+                    }
+                    else if(band.BandName == "The Rolling Stones")
+                    {
+                        band.AlbumList.Add(a3);
+                        band.AlbumList.Add(a4);
+                    }
+                    else if (band.BandName == "The Beatles")
+                    {
+                        band.AlbumList.Add(a5);
+                        band.AlbumList.Add(a6);
+                    }
+                    else if (band.BandName == "Green Day")
+                    {
+                        band.AlbumList.Add(a7);
+                        band.AlbumList.Add(a8);
+                    }
+                    else if (band.BandName == "Arctic Monkeys")
+                    {
+                        band.AlbumList.Add(a9);
+                        band.AlbumList.Add(a10);
+                    }
+                    else if (band.BandName == "The Strokes")
+                    {
+                        band.AlbumList.Add(a11);
+                        band.AlbumList.Add(a12);
+                    }
+                }
             }
         }
 
