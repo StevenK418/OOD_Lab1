@@ -1,12 +1,11 @@
-The Foo Fighters
-Rock
-1994
-Greatest Hits
-1/1/1976 12:00:00 AM
-46
-One By One
-1/1/1964 12:00:00 AM
-58
-rican Idiot,American Idiot
-1/1/1976 12:00:00 AM,1/1/1976 12:00:00 AM
-46,46
+Name:The Beatles
+Genre: Pop
+Year Formed: 1960
+
+Albums:
+Name: Let it be
+Released: 2019
+Years since release: 3
+Name: Sgt. Pepper's Lonely Heart club band
+Released: 2003
+Years since release: 19

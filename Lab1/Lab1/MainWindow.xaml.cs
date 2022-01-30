@@ -1,4 +1,18 @@
-﻿using System;
+﻿/*
+ * Name:            Steven Kelly
+ * Student ID:      S00200293
+ * Date:            28/01/2022
+ * Lab:             Lab1 - Bands WPF
+ * Question:        Lab 1
+ * Description:     "Create a XAML interface to manage bands"
+ * Developer note:  "Band ata File can be found locally at <Project Folder>/bin/Debug/".
+ * Github page:     https://github.com/StevenK418/OOD_Lab1
+ * Git Clone:       https://github.com/StevenK418/OOD_Lab1.git
+ * 
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -68,6 +82,9 @@ namespace Lab1
                 TBLK_Formed.Text = "";
                 TBLK_Members.Text = "";
             }
+
+            //Clear any possible error messages from the UI
+            TBLK_ErrorMessage.Text = "";
         }
         private void CMBX_Genre_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -240,28 +257,47 @@ namespace Lab1
 
         private void BTN_Save_Click(object sender, RoutedEventArgs e)
         {
-            FileManager fManager = new FileManager();
+            //Create a new filemanager instance
+            FileManager fileManager = new FileManager();
 
+            //Create a list to store all band data
             List<string> bandData = new List<String>();
 
             //Get a reference to the currently selected band
             Band selectedBand = (Band)LSTBX_Bands.SelectedItem;
 
-            //Add the data for the band to the bandData list
-            bandData.Add(selectedBand.BandName);
-            bandData.Add(selectedBand.BandType);
-            bandData.Add(selectedBand.YearFormed.ToString());
-
-            //Get the Albums for the selected Band
-            foreach (Album album in selectedBand.AlbumList)
+            //If a band is selected, collect the data
+            if (selectedBand != null)
             {
-                bandData.Add(album.Name);
-                bandData.Add(album.Released.ToString());
-                bandData.Add(album.YearsSinceRelease.ToString());
-            }
+                //Add the data for the band to the bandData list
+                bandData.Add("Name:" + selectedBand.BandName);
+                bandData.Add("Genre: " + selectedBand.BandType);
+                bandData.Add("Year Formed: " + selectedBand.YearFormed.ToString());
 
-            //Pass the bandData info to the filemanager to write to file.
-            FileManager.WriteTextFile(bandData);
+                //Add an Albums header to the file
+                bandData.Add("\nAlbums:");
+
+                //Get the Albums for the selected Band
+                foreach (Album album in selectedBand.AlbumList)
+                {
+                   
+                    //Add each album data field to the file
+                    bandData.Add("Name: " + album.Name);
+                    bandData.Add("Released: " + album.Released.Year.ToString());
+                    bandData.Add("Years since release: " + album.YearsSinceRelease.ToString());
+                }
+
+                //Pass the bandData info to the filemanager to write to file.
+                fileManager.WriteTextFile(bandData);
+
+                //Show a success message if file is saved! 
+                TBLK_ErrorMessage.Text = "File saved Successfully!";
+            }
+            else
+            {
+                //If no band is selected, show an error message
+                TBLK_ErrorMessage.Text = "Error: No Band Selected! Please selct a band and try again!";
+            }
         }
     }
 }
