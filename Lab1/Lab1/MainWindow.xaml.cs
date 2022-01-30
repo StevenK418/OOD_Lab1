@@ -238,5 +238,30 @@ namespace Lab1
             }
         }
 
+        private void BTN_Save_Click(object sender, RoutedEventArgs e)
+        {
+            FileManager fManager = new FileManager();
+
+            List<string> bandData = new List<String>();
+
+            //Get a reference to the currently selected band
+            Band selectedBand = (Band)LSTBX_Bands.SelectedItem;
+
+            //Add the data for the band to the bandData list
+            bandData.Add(selectedBand.BandName);
+            bandData.Add(selectedBand.BandType);
+            bandData.Add(selectedBand.YearFormed.ToString());
+
+            //Get the Albums for the selected Band
+            foreach (Album album in selectedBand.AlbumList)
+            {
+                bandData.Add(album.Name);
+                bandData.Add(album.Released.ToString());
+                bandData.Add(album.YearsSinceRelease.ToString());
+            }
+
+            //Pass the bandData info to the filemanager to write to file.
+            FileManager.WriteTextFile(bandData);
+        }
     }
 }

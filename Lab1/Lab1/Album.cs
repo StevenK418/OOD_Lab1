@@ -8,8 +8,8 @@ namespace Lab1
 {
     class Album
     {
-        string Name { get; set; }
-        DateTime Released { get; set; }
+        public string Name { get; set; }
+        public DateTime Released { get; set; }
         public int YearsSinceRelease { get; set; }
         long Sales { get; set; }
 
